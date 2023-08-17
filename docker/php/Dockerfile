@@ -43,7 +43,6 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 WORKDIR /var/www
 
 RUN usermod -aG www-data hacker
-RUN chown -R hacker:www-data /var/www
-RUN chmod -R 755 /var/www
+RUN chmod -R 775 /var/www
 
 CMD ["php-fpm"]

@@ -4,7 +4,7 @@ services:
     build:
       context: ./
       dockerfile: ./docker/php/Dockerfile
-    working_dir: /var/wwww
+    working_dir: /var/www
     volumes:
       - ./src:/var/www/
       - ./logs/php:/srv/var/log
