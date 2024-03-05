@@ -2,11 +2,11 @@ FROM php:8.1-fpm
 
 RUN apt-get update
 
-RUN apt-get install -y default-mysql-client iputils-ping net-tools unzip curl
+RUN apt-get install -y default-mysql-client iputils-ping net-tools unzip curl libzip-dev
 
 RUN useradd -m -d /home/mike -s /bin/bash mike && adduser mike sudo
 
-RUN docker-php-ext-install pdo_mysql mysqli
+RUN docker-php-ext-install zip pdo_mysql mysqli
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
